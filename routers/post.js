@@ -1,17 +1,15 @@
 const express = require("express")
 const router = express.Router()
 
+//importo il controller
+const postController = require("../controllers/postController")
+
 //rotte crud
 
 //rotta index
-router.get("/", (req, res) => {
-    res.send("Elenco posts")
-})
+router.get("/", postController.index)
 
 //rotta details del post
-router.get("/:id", (req, res) => {
-    const id = req.params.id
-    res.send(`Post con id: ${id}`)
-})
+router.get("/:id", postController.show)
 
 module.exports = router;
