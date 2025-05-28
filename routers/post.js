@@ -12,4 +12,7 @@ router.get("/", postController.index)
 //rotta details del post
 router.get("/:id", postController.show)
 
+//rotta eliminazione del post
+router.delete("/:id", postController.destroy);
+
 module.exports = router;
